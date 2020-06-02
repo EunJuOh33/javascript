@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 선택문 </title>
+<script>
+	// 문자열 데이터는 줄을 바꾸면 오류가 발생. 하지만 \와 함께 코드를 작성하면 문자열의 줄을 바꿀 수 있음
+	var site = prompt("네이버, 다음, 네이트, 구글 중 \
+	즐겨 사용하는 포털 검색 사이트는?", "");
+	var url;
+
+	/* 변수에 저장된 값은 swith 문을 만나면 case의 값과 일치하는지 하나씩 검사한다.
+		일치하는 데이터가 있으면 그에 해당하는 코드를 실행 */
+	switch(site) {
+		case "구글" : url="www.gogle.com";	// 변수 site에 "구글"을 입력받았을 때, 변수 url에 "www.gogle.com"이 할당된다.
+		break;	// break 문을 만나면 switch 문 종료
+		case "다음" : url="www.daum.net";
+		break;
+		case "네이버" : url="www.naver.com";
+		break;
+		case "네이트" : url="www.nate.com";
+		break;
+		// case의 값 중 일치하는 데이터가 없으면 마지막 default 문의 코드를 실행하고 switch문 종료
+		default: alert("보기 중에 없는 사이트입니다.");	// 경고창
+	}
+	
+	if(url) location.href = "http://" + url;	// url에 입력된 값이 있으면, location.href의 값이 변경되어 해당 포털사이트로 이동한다
+	/* href 는 location 객체에 속해있는 프로퍼티로 현재 접속중인 페이지 정보를 갖고 있다.
+   		값을 변경할 수 있는 프로퍼티이기 때문에 다른 페이지로 이동하는데도 사용된다. */
+</script>
+</head>
+<body>
+</body>
+</html>
