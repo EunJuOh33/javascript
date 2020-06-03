@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>평균 시험 점수와 학점 구하기</title>
+<style>
+	span {
+		color: red;
+	}
+</style>
+<script>
+	document.write("<h1>평균 시험 점수와 학점 구하기</h1>");
+	
+	var pilscore = prompt("필기시험 점수를 입력하세요.", "0");
+	var silscore = prompt("실기시험 점수를 입력하세요.", "0");
+//	var average = (pilscore + silscore)/2;	
+// parsInt() : 괄호 안의 문자열을 정수로 바꾸는 함수
+	var average = (parseInt(pilscore) + parseInt(silscore)) /2;
+	var grade;
+	
+	if(average >= 90) {
+		grade = "a";
+	} else if(average >= 80) {
+		grade = "b"
+	} else if(average >= 70) {
+		grade = "c"
+	} else if(average >= 60) {
+		grade = "d"
+	} else {
+		grade = "f"
+	}
+	
+	document.write("당신의 평균 시험 점수는 <span>" + average + "</span>입니다.<br/>");
+	document.write("당신의 학점은 <span>" + grade + "</span>입니다.");
+</script>
+</head>
+<body>
+</body>
+</html>
