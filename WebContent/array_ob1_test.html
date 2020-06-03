@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title>배열객체</title>
+<script>
+	document.write("<h1>배열 객체에 저장된 데이터 불러오기</12>");
+	
+	var arr = [30, "따르릉", true];	// 인덱스번호: 0 1 2, 배열길이(arr.lengh): 3
+	
+	document.write("<h2>배열값 가져오기 - 1</h3>");
+	document.write(arr[0], "<br/>");
+	document.write(arr[1], "<br/>");
+	document.write(arr[2], "<br/>");
+	
+	document.write("<h2>배열값 가져오기 - 2</h2>");
+	for(var i=0; i<arr.length; i++) {	// i가 0~2까지 1씩 증가
+		document.write(arr[i], "<br/>");	// 인덱스값 0, 1, 2를 화면에 출력
+	}
+	
+	document.write("<h2>배열값 가져오기 - 3</h2>");
+	for(i in arr)	// 위를 단축시킨 형태
+		document.write(arr[i], "<br/>");	// 인덱스값 0, 1, 2를 화면에 출력
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
