@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 수학객체 </title>
+<script>
+	/* 방문자가 '가위 바위, 보'를 적어 컴퓨터가 내려는 가위, 바위, 보를 추측해 맞추는 게임 */
+	document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+	
+	/* ------ 사용자 ------- */
+	// prompt함수 : 문자열을 입력. 사용자로부터 입력받는 데이터를 변수에 삽입할 때 사용한다. 
+	// - 첫번째 매개변수는 입력 창에서 띄워줄 메시지
+	// - 두번째 매개변수는 입력 부분의 기본 값. 비워놓아도 되고, 적어놓아도 된다.
+	var game = prompt("가위, 바위, 보 중 선택하세요?", "가위");	// 입력받은 데이터를 변수 game에 저장.
+	var gameNum;
+	
+	switch(game) {	// 변수 game에 저장된 문자열에 따라 gameNum에 값이 저장된다.
+	case "가위" :
+		gameNum = 1; 
+		break;
+	case "바위" :
+		gameNum = 2;
+		break;
+	case "보" :
+		gameNum = 3;
+		break;
+	default: alert("잘못 작성했습니다.");	// 어떠한 케이스도 없는 경우 경고창을 띄운다.
+		location.reload();	// window.location.reload(); reload메소드는 현재 웹페이지를 다시 불러온다. '새로고침'과 같은 기능
+	}
+	
+	
+	/* ------ 컴퓨터 ------- */
+	var com = Math.ceil(Math.random() * 3);
+	// Math.ceil() : 소수점 이하를 올림한다. 
+	// Math.random() : 0~1 사이의 난수 발생 (곱하기 3을 하면 0.03.. ~ 2.77... 등이 나올 것.)
+	// 0.3을 올림하면 1, 2.77을 올림하면 3. 결국 1 ~ 3의 정수가 나온다.
+	
+	document.write("<img src=\"images/math_img_" + com + ".jpg\">");	// \"은 '와 같다.
+	
+	if(gameNum == com) {	// gameNum이 com과 같다면
+		document.write("<img src='images/game_1.jpg'>");
+	} else {
+		document.write("<img src='images/game_2.jpg'>");
+	}
+</script>
+</head>
+<body>
+</body>
+</html>
