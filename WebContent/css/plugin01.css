@@ -21,7 +21,7 @@ p {
 }
 
 img {
-	width: 250px;
+	width: 100%;
 	height: 170px;
 }
 
@@ -34,26 +34,32 @@ button {
 	float: left;	/* 좌측정렬 */
 }
 
+.grid-item {
+	width: 250px;
+	margin-bottom: ;
+}
+
 
 /* ----------- Spiner만들기 ---------- */
 .loader {
-  color: #d1bdbd;
-  font-size: 90px;
-  text-indent: -9999em;
-  overflow: hidden;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  margin: 72px auto;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-  animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  	color: #d1bdbd;
+  	font-size: 90px;
+  	text-indent: -9999em;
+  	overflow: hidden;
+  	width: 11em;
+  	height: 11em;
+  	border-radius: 50%;
+  	margin: 72px auto;
+  	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	-webkit-transform: translateZ(0);
+  	-ms-transform: translateZ(0);
+ 	transform: translateZ(0);
+  	-webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+  	animation: load6 1.7s infinite ease, round 1.7s infinite ease;
 }
+
 @-webkit-keyframes load6 {
   0% {
     box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
