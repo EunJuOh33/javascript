@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> window 객체 </title>
+<style>
+	* {margin: 0;padding: 0;}
+</style>  
+</head>
+<body>
+	<p>
+		<img src="img/window_object_1.jpg" usemap="#intro" alt="신간 책 소개" />
+		<!-- 이미지 위에 창닫기 버튼 만들기 -->
+		<map name="intro" id="intro">
+			<area shape="rect" coords="230,368,280,390" href="#" alt="창 닫기" onclick="window.close();" />
+			<!-- 윈도우 객체의 close메소드. '창 닫기'를 클릭하면 현재 창을 닫는다. -->
+		</map>
+	</p>  
+</body>
+</html>
