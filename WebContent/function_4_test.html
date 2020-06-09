@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title>매개변수가 있는 함수</title>
+<script>
+	var rightId = "korea";
+	var rightPw = "1234";
+	
+	// 함수 정의
+	function login(id, pw) {
+		if(id == rightId) {
+			if(pw == rightPw) {
+				document.write(id + " 님 방문을 환영합니다.");
+			} else {
+				alert("잘못된 비밀번호입니다.");
+			}
+		} else {
+			alert("존재하지 않는 아이디입니다.");	// 아이디, 비밀번호 둘 다 틀려도 이 경고문만 뜬다.
+		}
+	}
+	
+	// prompt창
+	var userId = prompt("아이디를 입력하세요.");
+	var userPw = prompt("비밀번호를 입력하세요.");
+	
+	// 함수 호출
+	login(userId, userPw);	// 인자와 매개변수의 변수명이 똑같아도 되고, 달라도 된다. 그냥 값이 전달된다는 것만 기억하자.
+</script>
+</head>
+<body>
+</body>
+</html>
