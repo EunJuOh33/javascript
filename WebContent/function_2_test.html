@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title>함수 - 배경색 바꾸기</title>
+<script>
+	var color=["white", "yellow", "aqua", "purple"];
+	var i=0;
+	
+	function changeColor() {	// 일반함수 정의
+		i++;
+		if(i >= color.length) {	// i가 4이상이면 i에 0을 대입한다.
+			i = 0;
+		}
+		
+		/* <특정태그 id="aaa">의 여러 특성들을 자바스크립트로 바꾼다.
+		 * getElementById()는 거의 모든 브라우저에서 지원
+		 */
+		var bodyTag = document.getElementById("theBody");
+		bodyTag.style.backgroundColor = color[i];
+	}
+</script>
+</head>
+<body id="theBody">
+  <button onclick="changeColor();">배경색 바꾸기</button>
+  <!-- 버튼을 클릭하면 changeColor() 함수를 호출한다. -->
+</body>
+</html>
