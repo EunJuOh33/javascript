@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset = "UTF-8">
+	<title>운영체제 및 스크린 정보</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script>
+		/* navigator객체 : 현재 방문자가 사용하는 브라우저와 운영체제 정보 제공. window객체는 따로 생성하지 않아도 사용할 수 있다.
+		 * userAgent : 브라우저가 서버측으로 전송하는 USER-AGENT HTTP 헤더의 내용.
+		 * toLowerCase 메소드 : 구한 정보를 소문자로 치환 
+		 */
+		var info = navigator.userAgent.toLowerCase();
+		var oslmg = null;
+		
+		/* indexOf 메소드 : 특정 문자열이 들어있는지 확인하고, 몇 번 째 순서에 해당 문자열이 있는지 알려준다.
+		 * 해당 문자열이 없다면 -1을 반환
+		 */
+		if(info.indexOf('windows') >= 0) {	// 인덱스번호 0번 이상에 'windows'문자열이 있다면, oslmg 변수에 윈도우 이미지 파일명 저장
+			oslmg = "windows.png";
+		} else if(info.indexOf('macintosh') >= 0) {
+			oslmg = "macintosh.png";
+		} else if(info.indexOf('iphone') >= 0) {
+			oslmg = "iphone.png"
+		} else if(info.indexOf('android') >= 0) {
+			oslmg = "android.png";
+		}
+		
+		document.write("<img src=\"img/" + oslmg + "\">", "<br/>");
+		
+		/* screen객체는 사용자의 모니터 정보를 제공한다. 모니터의 너비나 높이, 컬러표현 bit 등을 반환한다. */
+		var scr = screen;	// scr변수 안에 screen객체를 참조시킨다.
+		var sc_w = scr.width;	// screen.width; 모니터의 너비값 반환
+		var sc_h = scr.height;
+		
+		document.write("모니터 해상도 너비: " + sc_w + "px", "<br/>");
+		document.write("모니터 해상도 높이: " + sc_h + "px", "<br/>");
+	</script>
+</head>
+<body>
+</body>
+</html>
