@@ -4,27 +4,36 @@
 	<meta charset = "UTF-8">
 	<title> 날짜 정보 객체 </title>
 	<script>
-		var today = new Date();		// new키워드와 Date생성자를 이용해 객체를 생성. 생성된 객체는 변수 today가 참조한다.
-		// 생성된 Date객체의 다양한 메소드를 호출하여 변수 nowMonth, nowDate, nowDay에 저장한다.
-		var nowMoth = today.getMonth(),
-		nowDate = today.getDate(),
-		nowDay = today.getDay();
+		/* 오늘 날짜 출력하기 */
+		var today = new Date( );	// new키워드와 Date생성자를 이용해 객체를 생성. 생성된 객체는 변수 today가 참조한다.
+		var nowMonth = today.getMonth( ),	// 생성된 Date객체의 다양한 메소드를 호출하여 변수 nowMonth, nowDate, nowDay에 저장한다.
+			nowDate = today.getDate( ),
+			nowDay = today.getDay();	// 일요일은 0, 토요일은 6이다.
+		
+		// 요일 한글로 출력하기
+		var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+	    var nowDay = week[nowDay];	// nowDay에는 인덱스 번호가 들어간다.
 		
 		document.write("<h1>오늘 날짜 정보</h1>");
 		document.write("현재 월: " + nowMonth, "<br>");
 		document.write("현재 일: " + nowDate, "<br>");
 		document.write("현재 요일: " + nowDay, "<br>");
 		
+		
 		/* 월드컵 날짜 출력하기 */
-		var worldcup = new Date(2002, 4, 31);	// 월드컵 날짜를 인수로 하여 Date객체 생성. 생성된 객체는 변수 worldcup이 참조한다.
-		var theMonth = worldcup.getMonth(),
-		the Date = worldcup.getMonth(),
-		theDay = worldcup.getDay();
+		var worldcup = new Date(2002, 4, 31);
+		var theMonth = worldcup.getMonth( ),
+			theDate = worldcup.getDate( ),
+			theDay = worldcup.getDay();
+		
+		// 특정 날짜의 요일 한글로 출력하기
+		var theWeek = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+		var theDay = theWeek[theDay];
 		
 		document.write("<h1>월드컵 날짜 정보</h1>");
-		document.write("2002월드컵 몇 월: " + theMonth, "<br>");		
-		document.write("2002월드컵 몇 일: " + theDate, "<br>");		
-		document.write("2002월드컵 무슨 요일: " + theDay, "<br>");		
+		document.write("2002월드컵은 몇 월: " + theMonth, "<br>");
+		document.write("2002월드컵은 몇 일: " + theDate, "<br>");
+		document.write("2002월드컵은 무슨 요일: " + theDay, "<br>");		
 	</script>
 </head>
 <body>
