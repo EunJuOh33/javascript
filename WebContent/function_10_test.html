@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset = "UTF-8">
+	<title>객체 생성자 함수</title>
+	<script>
+		/* CheckWeight 객체 생성자 함수 */
+		function CheckWeight(name, height, weight) {
+			// 객체 생성자의 함수명은 소문자로 시작해도 되지만 가능하면 대문자 사용(개발자 간의 약속)
+			this.userName = name;
+			this.userHeight = height;
+			this.userWeight = weight;
+			this.minWeight;
+			this.maxWeight;
+	
+			// 함수 getInfo
+			this.getInfo = function() {
+				var str = ""
+					str += "이름: " + this.userName + ", ";
+					str += "키: " + this.userHeight + ", ";
+					str += "몸무게: " + this.userWeight + "<br>";
+					return  str;
+			}
+			
+			// 함수 getResult
+			this.getResult = function( ) {
+				this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+				this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+	
+				if(this.userWeight >= this.minWeight && this.userWeight <= this.maxWeight) {
+					return "정상 몸무게입니다";
+				} else if(this.userWeight < this.minWeight) {
+					return "정상 몸무게보다 미달입니다";
+				} else {
+					return "정상 몸무게보다 초과입니다";
+				}
+			}
+		}
+	/* CheckWeight 객체 생성자 함수 정의 끝 */
+	
+	
+		// new키워드와 객체 생성자 함수로 jang, park 객체 생성
+		var jang = new CheckWeight("장보리", 168, 62);
+		var park = new CheckWeight("박달재", 180, 88);
+		
+		// F12 콘솔 창에 객체 정보 출력
+		// 인터넷 익스플로러 등 표준에서 console 객체가 존재하지 않는 브라우저(콘솔객체를 탑재하지 않은)에서는 에러가 발생하므로 주의
+		console.log(jang);
+		console.log(park);
+		
+		// document.write화면에 출력
+		// jang객체의 getInfo함수 getResult 함수 호출 -> 리턴값이 화면에 출력된다.
+		document.write(jang.getInfo());
+		document.write(jang.getResult());
+	</script>
+</head>
+<body>
+</body>
+</html>
