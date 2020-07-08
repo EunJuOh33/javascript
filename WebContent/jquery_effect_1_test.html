@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>  
+<style>
+	.content{
+		width:400px;
+		background-color: #eee;
+	}
+</style>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script>
+	$(function( ) {
+		$(".btn2").hide();	// btn2[fadeIn버튼]는 (이벤트 없이)강제로 숨긴다.
+		
+		
+		/* [slideUp] 버튼 */
+		$(".btn1").on("click", function() {	// [slideUp버튼]을 클릭하면 이벤트 핸들러 실행
+			$(".box").slideUp(1000, "linear", function() {
+			// 클래스 값이 box인 요소가 위로 접히며 숨겨진다. (1초, 일정한 속도로)	
+				$(".btn1").hide();	// btn1은 숨겨진다.
+				$(".btn2").show();	// btn2는 노출된다.
+			});
+		});
+		
+		
+		/* [fadeIn] 버튼 */
+		$(".btn2").on("click", function() {	// 클릭하면 이벤트 핸들러 실행
+			$(".box").fadeIn(1000, "swing", function() {
+			// 숨겨진 요소가 점점 선명해진다. (1초, 시작과 끝은 느리게 중간은 빠른속도로)	
+				$(".btn2").hide();
+				$(".btn1").show();
+			});
+		});
+		
+		
+		/* [toggleSide] 버튼 */
+		$(".btn3").on("click", function() {
+			$(".box").slideToggle(1000, "linear");
+			// slideUp, slideDown효과를 적용한다. (1초, 일정한 속도로)
+			// 요소가 접혀있다면 펴지고, 펴져있다면 접힌다.
+		});
+		
+		
+		/* [fadeTo(0.3)] 버튼 */
+		$(".btn4").on("click", function() {
+			$(".box").fadeTo("fast", 0.3);
+			// 지정한 투명도를 적용한다.(빠르게, 70%투명)
+		});
+		
+		
+		/* [fadeTo(1)] 버튼 */
+		$(".btn5").on("click", function() {
+			$(".box").fadeTo("fast", 1);
+			// 지정한 투명도를 적용한다.(빠르게, 70%투명해짐)
+		});
+	});
+</script>
+</head>
+<body>
+	<p>
+		<button class="btn1">slideUp</button>
+		<button class="btn2">fadeIn</button>
+	</p>
+	<p>
+		<button class="btn3">toggleSide</button>
+	</p> 
+	<p>
+		<button class="btn4">fadeTo(0.3)</button>
+		<button class="btn5">fadeTo(1)</button>
+	</p>   
+	<div class="box">
+		<div class="content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat consectetur nibh, ut luctus urna placerat non. Phasellus consectetur nunc nec mi feugiat egestas. Pellentesque et consectetur mauris, sed rutrum est. Etiam odio nunc, ornare quis urna sed, fermentum fermentum augue. Nam imperdiet vestibulum ipsum quis feugiat. Nunc non pellentesque diam, nec tempor nibh. Ut consequat sem sit amet ullamcorper sodales.
+		</div>
+	</div>
+</body>
+</html>
