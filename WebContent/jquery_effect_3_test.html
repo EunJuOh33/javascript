@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>  
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script>
+	$(function() {
+		$(".txt1").animate({marginLeft:"300px"}, 1000);
+		// class값이 txt1인 요소가 오른쪽으로 300px만큼 움직인다, 1초동안
+		
+		$(".txt2").delay(3000).animate({marginLeft:"300px"}, 1000);
+		// delay(300)으로 3초 후에 애니메이션이 적용된다.
+		
+		
+		$(".btn1").on("click", moveElement);
+		// 클래스 값이 btn1인 [버튼]을 누르면 moveElement함수가 작동한다.
+		function moveElement() {
+			$(".txt3").animate({marginLeft:"+=50px"}, 800);
+			// [버튼]을 누를 때마다 class값이 txt3인 요소가 오른쪽으로 50px씩 이동한다, 0.8초동안
+			
+			$(".txt4").animate({marginLeft:"+=50px"}, 800);
+			$(".txt4").stop();
+			// stop()이 실행되면 버튼을 눌러도 애니메이션이 아예 동작하지 않는다.
+			
+			$(".txt5").animate({marginLeft:"+=50px"}, 800);
+			$(".txt5").stop(true, true);
+			// stop(true, true)가 실행되면 애니메이션이 바로 종료 시점으로 이동한다.
+			// 그래서 애니메이션 없이 css()메서드를 적용한 것처럼 50px 이동한다.
+		}	
+	});
+</script>
+<style>
+	p{width: 110px;text-align: center;}
+	.txt1{background-color: aqua;}
+	.txt2{background-color: pink;}
+	.txt3{background-color: orange;}
+	.txt4{background-color: green;}
+	.txt5{background-color: gold;}
+</style>
+</head>
+<body>
+	<p class="txt1">효과1</p>
+	<p class="txt2">효과2<br> delay(3000)</p>
+
+	<p><button class="btn1">50px 전진</button></p>
+	<p class="txt3">효과3</p>
+	<p class="txt4">효과4<br>stop( )</p>
+	<p class="txt5">효과5<br>stop(true, true)</p>
+</body>
+</html>
