@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 효과와 애니메이션 </title>
+<style>
+	*{margin:0;}
+	.txt1{width:50px;text-align: 
+	center;background-color: aqua;}
+</style>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script>
+	$(function(){
+		$(".txt1")
+		.animate({marginLeft:"200px"}, 1000)	// 먼저, 1초동안 오른쪽으로 200px 이동
+		.animate({marginTop:"200px"}, 1000)		// 그 다음, 1초동안 아래로 200px 이동
+		.queue(function() {						// 큐에 지정한 함수 추가(그 다음 실행). 큐 메서드를 실행하면 queue메서드 이후의 모든 애니메이션이 적용되지 않는다.
+			$(this).css({background:"red"});	// 빨간색으로 변한다.
+			$(this).dequeue();					// 큐 메서드 실행 후 dequeue()메서드를 생략하면 queue()메서드 이후의 모든 애니메이션이 적용되지 않는다.
+		})
+		.animate({marginLeft:0}, 1000)			// 1초동안 왼쪽으로 200px이동한다.(marginLeft가 제자리로 돌아오는 것)
+		.animate({marginTop:0},1000);			// 1초동안 위로 200px 이동한다. (marginTop이 제자리로 돌아오는 것)
+	});
+</script>
+</head>
+<body>
+	<p class="txt1">내용1</p>
+</body>
+</html>
